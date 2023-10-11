@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:stv/config/router/router.dart';
 import 'package:stv/config/theme/theme.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+ Future<void> main() async {
 
-void main() {
+  await dotenv.load (fileName: '.env');
+
+
+
   runApp(const MainApp());
 }
 

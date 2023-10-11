@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:stv/config/constants/environment.dart';
 
 class Home extends StatelessWidget {
   static const name = 'Home-screen';
@@ -6,8 +8,10 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Placeholder(),
+    return  Scaffold(
+      body: Center(
+        child: Text( Environment.ApiKey),
+    ),
     );
   }
 }
