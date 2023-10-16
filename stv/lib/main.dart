@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:stv/config/router/router.dart';
 import 'package:stv/config/theme/theme.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -8,7 +9,9 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 
 
-  runApp(const MainApp());
+  runApp(
+   const ProviderScope(child: MainApp())
+  );
 }
 
 class MainApp extends StatelessWidget {
