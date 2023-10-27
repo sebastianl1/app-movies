@@ -78,42 +78,38 @@ class _HomeViewState extends ConsumerState<_HomeView> {
           (context, index) {
             return  Container(
               margin: const EdgeInsets.symmetric(vertical : 5,),
-              color: Colors.white60,
+              color: Colors.white30,
               child: Column(
                     children: [
-                      
-                    
                       //const CustomAppBar(),
-                      
-                    
                       MoviesSlideShow(movies: Slideshowmovies ),
                     
                       HorizontalView(
-              movies: nowPlayingMovies,
-              title: 'Peliculas de ahora',
-              subtitle: 'Catalogo',
-              loadNextPage: (){ ref.read(nowPlayingMoviesProvider.notifier).loadNextPage();},
+                         movies: nowPlayingMovies, 
+                         title: 'Peliculas de ahora',
+                         subtitle: 'Catalogo',
+                         loadNextPage: (){ ref.read(nowPlayingMoviesProvider.notifier).loadNextPage();},
+
+                      ),
+                      HorizontalView(
+                         movies: popularMovies,
+                         title: 'Populares',
+                         subtitle: '...',
+                         loadNextPage: (){ ref.read(popularityMoviesProvider.notifier).loadNextPage();},
               
                       ),
-              HorizontalView(
-              movies: popularMovies,
-              title: 'Populares',
-              subtitle: '...',
-              loadNextPage: (){ ref.read(popularityMoviesProvider.notifier).loadNextPage();},
+                      HorizontalView(
+                        movies: topRated,
+                        title: 'Mejor Valoradas',
+                        subtitle: '...',
+                        loadNextPage: (){ ref.read(topRatedProvider.notifier).loadNextPage();},
               
                       ),
-              HorizontalView(
-              movies: topRated,
-              title: 'Mejor Valoradas',
-              subtitle: '...',
-              loadNextPage: (){ ref.read(topRatedProvider.notifier).loadNextPage();},
-              
-                      ),
-              HorizontalView(
-              movies: upComing,
-              title: 'Proximamente',
-              subtitle: '...',
-              loadNextPage: (){ ref.read(upComingProvider.notifier).loadNextPage();},
+                      HorizontalView(
+                      movies: upComing,
+                      title: 'Proximamente',
+                      subtitle: '...',
+                      loadNextPage: (){ ref.read(upComingProvider.notifier).loadNextPage();},
               
                       )
                 
